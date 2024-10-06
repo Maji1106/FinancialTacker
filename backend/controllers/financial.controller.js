@@ -1,4 +1,4 @@
-const Financial = require("../modles/financial.model");
+const Financial = require("../models/fanancial.models");
 
 //create a new financial record
 

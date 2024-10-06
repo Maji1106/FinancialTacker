@@ -1,37 +1,36 @@
-const {Datatypes} = require("sequelize")
+const { DataTypes } = require("sequelize"); // นำเข้า DataTypes
 const sequelize = require("./db");
 
 const Financial = sequelize.define("financial", {
   id: {
-    type: Datatypes.INTEGER,
-    autoIncrement: True,
-    PrimaryKey: True,
+    type: DataTypes.INTEGER,
+    autoIncrement: true,
+    primaryKey: true,
   },
   userId: {
-    type: Datatypes.STRING,
+    type: DataTypes.STRING,
     allowNull: false
   },
-  descriotion: {
-    type: Datatypes.STRING,
+  description: { // แก้ไขการพิมพ์ผิด
+    type: DataTypes.STRING,
     allowNull: false
   },
   date: {
-    type: Datatypes.DATE,
+    type: DataTypes.DATE,
     allowNull: false
   },
-  amount:{
-    type:Datatypes.DECIMAL,
+  amount: {
+    type: DataTypes.DECIMAL,
     allowNull: false
   },
-  category:{
-     type: Datatypes.STRING,
+  category: {
+    type: DataTypes.STRING,
     allowNull: false
   },
-  paymentMethod:{
-     type: Datatypes.STRING,
-     allowNull: false
+  paymentMethod: {
+    type: DataTypes.STRING,
+    allowNull: false
   }
-
 });
 
 Financial.sync({ force: false })
